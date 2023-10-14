@@ -1,1 +1,16 @@
-﻿Console.WriteLine("Hello, World!");
+﻿var name = "Ewa";
+char gender = 'k';
+var age = 33;
+
+if (age < 30 && gender == 'k')
+{
+    Console.WriteLine("Kobieta poniżej 30lat");
+}
+else if (age == 33 && name == "Ewa")
+{
+    Console.WriteLine("Ewa, lat 33");
+}
+else
+{
+    Console.WriteLine("Niepełnoletni Mężczyzna");
+}
