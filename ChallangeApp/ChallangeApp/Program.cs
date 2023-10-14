@@ -6,10 +6,6 @@ if (age < 30 && gender == 'k')
 {
     Console.WriteLine("Kobieta poniżej 30lat");
 }
-else if (!(age > 32) && gender == 'k' && name == "Ewa")
-{
-    Console.WriteLine("Ewa nie ma powyżej 32 lat");
-}
 else if (age == 33 && name == "Ewa")
 {
     Console.WriteLine("Ewa, lat 33");
