@@ -13,50 +13,49 @@ int counterChar7 = 0;
 int counterChar8 = 0;
 int counterChar9 = 0;
 
-foreach (char liczba in letters)
+foreach (char letter in letters)
 {
-    if(liczba == '0')
+    if(letter == '0')
     {
         counterChar0++;
     }
-    else if(liczba == '1') 
+    else if(letter == '1') 
     {
         counterChar1++;
     }
-    else if (liczba == '2')
+    else if (letter == '2')
     {
         counterChar2++;
     }
-    else if (liczba == '3')
+    else if (letter == '3')
     {
         counterChar3++;
     }
-    else if (liczba == '4')
+    else if (letter == '4')
     {
         counterChar4++;
     }
-    else if (liczba == '5')
+    else if (letter == '5')
     {
         counterChar5++;
     }
-    else if (liczba == '6')
+    else if (letter == '6')
     {
         counterChar6++;
     }
-    else if (liczba == '7')
+    else if (letter == '7')
     {
         counterChar7++;
     }
-    else if (liczba == '8')
+    else if (letter == '8')
     {
         counterChar8++;
     }
-    else if (liczba == '9')
+    else if (letter == '9')
     {
         counterChar9++;
     }
 }
-
 Console.WriteLine("Wynik wystąpień liczb dla liczby " + number +":");
 Console.WriteLine("0 => " + counterChar0);
 Console.WriteLine("1 => " + counterChar1);
