@@ -1,69 +1,57 @@
-﻿int number = 4566;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+﻿using ChallangeApp;
 
-int counterChar0 = 0;
-int counterChar1 = 0;
-int counterChar2 = 0;
-int counterChar3 = 0;
-int counterChar4 = 0;
-int counterChar5 = 0;
-int counterChar6 = 0;
-int counterChar7 = 0;
-int counterChar8 = 0;
-int counterChar9 = 0;
+Employee employee1 = new Employee("Arek", "Zioło", 18);
+Employee employee2 = new Employee("Monika", "Koslo", 24);
+Employee employee3 = new Employee("Zuzia", "Tylko", 48);
 
-foreach (char letter in letters)
+employee1.AddScore(1);
+employee1.AddScore(2);
+employee1.AddScore(3);
+employee1.AddScore(4);
+employee1.AddScore(5);
+//15
+
+employee2.AddScore(6);
+employee2.AddScore(7);
+employee2.AddScore(8);
+employee2.AddScore(9);
+employee2.AddScore(1);
+//31
+
+employee3.AddScore(2);
+employee3.AddScore(3);
+employee3.AddScore(4);
+employee3.AddScore(5);
+employee3.AddScore(6);
+//20
+
+var result = employee1.Result;
+Console.WriteLine(employee1.Name + " " + employee1.Surname + " zdobył/a " + result + " punktów, wiek " + employee1.Age);
+
+
+var result1 = employee2.Result;
+Console.WriteLine(employee2.Name + " " + employee2.Surname + " zdobył/a " + result1 + " punktów, wiek " + employee2.Age);
+
+
+var result2 = employee3.Result;
+Console.WriteLine(employee3.Name + " " + employee3.Surname + " zdobył/a " + result2 + " punktów, wiek " + employee3.Age);
+
+
+List<Employee> employees = new List<Employee>()
 {
-    if(letter == '0')
+    employee1, employee2, employee3
+};
+
+int maxResult = -1;
+Employee EmpolyeeWithMaxResult = null;
+
+foreach (var employee in employees)
+{
+    if (employee.Result > maxResult)
     {
-        counterChar0++;
-    }
-    else if(letter == '1') 
-    {
-        counterChar1++;
-    }
-    else if (letter == '2')
-    {
-        counterChar2++;
-    }
-    else if (letter == '3')
-    {
-        counterChar3++;
-    }
-    else if (letter == '4')
-    {
-        counterChar4++;
-    }
-    else if (letter == '5')
-    {
-        counterChar5++;
-    }
-    else if (letter == '6')
-    {
-        counterChar6++;
-    }
-    else if (letter == '7')
-    {
-        counterChar7++;
-    }
-    else if (letter == '8')
-    {
-        counterChar8++;
-    }
-    else if (letter == '9')
-    {
-        counterChar9++;
+        maxResult = employee.Result;
+        EmpolyeeWithMaxResult = employee;
     }
 }
-Console.WriteLine("Wynik wystąpień liczb dla liczby " + number +":");
-Console.WriteLine("0 => " + counterChar0);
-Console.WriteLine("1 => " + counterChar1);
-Console.WriteLine("2 => " + counterChar2);
-Console.WriteLine("3 => " + counterChar3);
-Console.WriteLine("4 => " + counterChar4);
-Console.WriteLine("5 => " + counterChar5);
-Console.WriteLine("6 => " + counterChar6);
-Console.WriteLine("7 => " + counterChar7);
-Console.WriteLine("8 => " + counterChar8);
-Console.WriteLine("9 => " + counterChar9);
+Console.WriteLine("");
+Console.WriteLine(EmpolyeeWithMaxResult.Name + ", lat " + EmpolyeeWithMaxResult.Age + " zdobyła największą ilość punktów która wynosi: " + EmpolyeeWithMaxResult.Result);
