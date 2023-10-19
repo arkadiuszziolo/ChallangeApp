@@ -1,55 +1,77 @@
-namespace ChallangeApp.Tests
+﻿namespace ChallangeApp.Tests
 {
-    public class Tests
+    public class EmployeeTest
     {
         [Test]
-        public void WhenEmployeeCollectTwoSetOfPoints_ResultShouldBeCorrect()
+        public void AverageFloat_TestCorrect()
         {
             //arrange
-            var employee = new Employee("Maciek","asdaf", 18);
-            employee.AddScore(10);
-            employee.AddScore(15);
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade(15.1F);
+            employee.AddGrade(5.5F);
+            employee.AddGrade(21.1F);
+            employee.AddGrade(7.1F);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(25, result);
+            Assert.AreEqual(Math.Round(12.20F,2), Math.Round(statistics.Average),2);
+
         }
+
         [Test]
-        public void WhenEmployeeCollectMinusPoints_ResultShouldBeCorrect()
+        public void Average_TestCorrect()
         {
             //arrange
-            var employee = new Employee("Maciek","asdaf", 18);
-            employee.AddScore(-10);
-            employee.AddScore(-15);
-            employee.AddScore(-15);
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade(15);
+            employee.AddGrade(5);
+            employee.AddGrade(21);
+            employee.AddGrade(7);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(-40, result);
+            Assert.LessOrEqual(12, statistics.Average);
+
         }
+
         [Test]
-        public void WhenEmployeeCollectPlusAndMinusPoints_ResultShouldBeCorrect()
+        public void Min_TestCorrect()
         {
             //arrange
-            var employee = new Employee("Maciek","asdaf", 18);
-            employee.AddScore(-10);
-            employee.AddScore(-15);
-            employee.AddScore(-15);
-            employee.AddScore(10);
-            employee.AddScore(2);
-            employee.AddScore(0);
-            employee.AddScore(12);
-            employee.AddScore(1);
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade(15);
+            employee.AddGrade(5);
+            employee.AddGrade(21);
+            employee.AddGrade(7);
 
             //act
-            var result = employee.Result;
+            var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(-15, result);
+            Assert.AreEqual(5, statistics.Min);
+
+        }
+
+        [Test]
+        public void Max_TestCorrect()
+        {
+            //arrange
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade(15);
+            employee.AddGrade(5);
+            employee.AddGrade(21);
+            employee.AddGrade(7);
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual(21, statistics.Max);
+
         }
     }
-} 
+}
