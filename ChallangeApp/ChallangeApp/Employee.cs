@@ -23,7 +23,39 @@
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine($"Invalid Grade: Grade {grade}, value must be between 0 to 100.");
+            }
+        }
+        public void AddGrade(int grade)
+        {
+            float intToFloat = grade;
+            this.AddGrade(intToFloat);
+        }
+
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+        }
+
+        public void AddGrade(double grade)
+        {
+            float doubleToFloat = (float)grade;
+            this.AddGrade(doubleToFloat);
+        }
+
+        public void AddGrade(long grade)
+        {
+            float LongToFloat = grade;
+            this.AddGrade(LongToFloat);
         }
 
         public Statistics GetStatistics()
