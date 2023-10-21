@@ -44,6 +44,10 @@
             {
                 this.AddGrade(result);
             }
+            else
+            {
+                Console.WriteLine($"Invalid String: String {grade} can't be parse to float");
+            }
         }
 
         public void AddGrade(double grade)
