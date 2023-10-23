@@ -10,12 +10,13 @@ employee.AddGrade(21123.15F);
 employee.AddGrade(10.15);
 employee.AddGrade(201.21);
 employee.AddGrade(9223372036854775806);
-//long
-var statistics = employee.GetStatistics();
-
+var statistics1 = employee.GetStatisticsWithFor();
+var statistics2 = employee.GetStatisticsWithForEach();
+var statistics3 = employee.GetStatisticsWithWhile();
+var statistics4 = employee.GetStatisticsWithDoWhile();
 
 
 Console.WriteLine($"Pracownik: {employee.Name} {employee.Surname} otrzymał:");
-Console.WriteLine($"Max: {statistics.Max}");
-Console.WriteLine($"Min: {statistics.Min}");
-Console.WriteLine($"Average: {statistics.Average:N2}");
+Console.WriteLine($"Max: {statistics1.Max}");
+Console.WriteLine($"Min: {statistics1.Min}");
+Console.WriteLine($"Average: {statistics1.Average:N2}");
