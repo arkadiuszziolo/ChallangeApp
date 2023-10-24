@@ -71,7 +71,71 @@
 
             //assert
             Assert.AreEqual(21, statistics.Max);
+        }
 
+        [Test]
+        public void CharAverageTest_TestCorrect()
+        {
+            //arrange
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade('A');
+            employee.AddGrade('B');
+            employee.AddGrade('C');
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual(80, statistics.Average);
+        }
+
+
+        [Test]
+        public void CharMinTest_TestCorrect()
+        {
+            //arrange
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade('A');
+            employee.AddGrade('B');
+            employee.AddGrade('C');
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual(60, statistics.Min);
+        }
+
+        [Test]
+        public void CharMaxTest_TestCorrect()
+        {
+            //arrange
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade('A');
+            employee.AddGrade('B');
+            employee.AddGrade('C');
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual(100, statistics.Max);
+        }
+
+        [Test]
+        public void CharAverageLetter_TestCorrect()
+        {
+            //arrange
+            var employee = new Employee("Arek", "Zioło");
+            employee.AddGrade('A');
+            employee.AddGrade('B');
+            employee.AddGrade('C');
+
+            //act
+            var statistics = employee.GetStatistics();
+
+            //assert
+            Assert.AreEqual('A', statistics.AverageLetter);
         }
     }
 }
