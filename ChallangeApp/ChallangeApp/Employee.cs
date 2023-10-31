@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
+﻿namespace ChallangeApp
 
-namespace ChallangeApp
 {
     public class Employee
     {
@@ -9,7 +8,7 @@ namespace ChallangeApp
         public Employee(string name)
         {
             this.Name = name;
-            this.Surname = "-";
+            this.Surname = "";
         }
 
         public Employee(string name, string surname)
@@ -32,7 +31,7 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine($"Invalid Grade: Grade {grade}, value must be between 0 to 100.");
+                throw new Exception($"Invalid Grade: Grade {grade}, value must be between 0 to 100.");
             }
         }
         public void AddGrade(int grade)
@@ -49,7 +48,7 @@ namespace ChallangeApp
             }
             else
             {
-                Console.WriteLine($"Invalid String: String {grade} can't be parse to float");
+                throw new Exception($"Invalid String: String {grade} can't be parse to float");
             }
         }
 
@@ -84,8 +83,7 @@ namespace ChallangeApp
                     this.AddGrade(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Letter");
-                    break;
+                    throw new Exception("Wrong Letter");
             }
         }
 
