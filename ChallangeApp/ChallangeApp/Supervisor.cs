@@ -127,9 +127,8 @@
                     {
                         this.AddGrade(result);
                     }
-                    else if (grade.Length == 1)
+                    else if (char.TryParse(grade, out char resultChar))
                     {
-                        char.TryParse(grade, out char resultChar);
                         this.AddGrade(resultChar);
                     }
                     else
