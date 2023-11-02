@@ -80,7 +80,7 @@
             var employee = new Employee("Arek", "Zioło");
             employee.AddGrade('A');
             employee.AddGrade('B');
-            employee.AddGrade('C');
+            employee.AddGrade('c');
 
             //act
             var statistics = employee.GetStatistics();
