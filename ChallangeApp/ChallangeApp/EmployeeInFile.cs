@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
-
-namespace ChallangeApp
+﻿namespace ChallangeApp
 {
     public class EmployeeInFile : EmployeeBase
     {
         private const string fileName = "grades.txt";
+
+        public override event GradeAddedDalegate GradeAdded;
 
         public EmployeeInFile(string name, string surname, int age, char gender) 
             : base(name, surname, age, gender)
@@ -18,6 +18,10 @@ namespace ChallangeApp
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
+                }
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
                 }
             }
             else

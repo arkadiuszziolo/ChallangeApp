@@ -5,6 +5,12 @@ Console.WriteLine("===========================================");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Arek", "Zioło", 22, 'M');
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Successfully added grade!");
+}
 
 while (true)
 {
