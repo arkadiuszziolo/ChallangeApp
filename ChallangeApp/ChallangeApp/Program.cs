@@ -1,6 +1,6 @@
 ﻿using ChallangeApp;
 
-Console.WriteLine("Witamy w programie XYZ do oceny pracowników");
+Console.WriteLine("Welcome to XYZ's employee assessment program");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
@@ -9,12 +9,12 @@ employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
 {
-    Console.WriteLine("Successfully added grade!");
+    Console.WriteLine("Successfully added grade");
 }
 
 while (true)
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika:");
+    Console.WriteLine("Enter next employee evaluation:");
     var input = Console.ReadLine();
     if (input == "q")
     {
