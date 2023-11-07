@@ -1,6 +1,6 @@
 ﻿using ChallangeApp;
 
-Console.WriteLine("Welcome to XYZ's employee assessment program");
+Console.WriteLine("Welcome to XYZ's mployee evaluation program");
 Console.WriteLine("===========================================");
 Console.WriteLine();
 
